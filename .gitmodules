@@ -1,3 +1,4 @@
 [submodule "zorgpkgs"]
 	path = zorgpkgs
 	url = git@github.com:grantzvolsky/zorgpkgs.git
+	branch = master
