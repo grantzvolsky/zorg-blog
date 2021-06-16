@@ -44,16 +44,13 @@ function ArticleRoute(props: RouteComponentProps & {slug?: string}) {
 }
 
 function DefaultRoute(props: RouteComponentProps) {
-  switch (props.uri) {
-    case '/':
-      return <Redirect noThrow={true} to={'/blog'} />
-    case '/articles/60133f1c-6de5-43d1-904c-6eb1e0f9195d':
-      return <Redirect noThrow={true} to={'/blog/do-lb-ingress-nginx-ip'} />
-  }
   return <NotFound {...props} />
 }
 
 const app = <React.StrictMode><Router>
+  <Redirect noThrow={true} from='/' to={'/blog'} />
+  <Redirect noThrow={true} from='/articles/60133f1c-6de5-43d1-904c-6eb1e0f9195d' to={'/blog/do-lb-ingress-nginx-ip'} />
+  <Redirect noThrow={true} from='/blog/psa-e590-48gb-ram-upgrade' to={'/blog/e590-48gb-ram-upgrade'} />
   <IndexRoute path='/blog' />
   <ArticleRoute path='/blog/:slug' />
   <DefaultRoute default />
