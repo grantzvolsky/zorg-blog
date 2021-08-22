@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 import { Link, Redirect, RouteComponentProps, Router } from "@reach/router"
 import { ArticleData, articleIndex, articles } from './articles/Articles'
 
-const header = <React.Fragment><h1><Link to='/blog'>zvolsky.org/blog</Link> ~ bits of information I wish were available on the internet</h1></React.Fragment>
+const header = <header><Link to='/blog'>zvolsky.org/blog</Link> ~ bits of information I wish were available on the internet</header>
 
 interface PageLayoutProps {}
 function AppFrame(props: React.PropsWithChildren<PageLayoutProps>) {
   return <React.Fragment>
     {header}
-    {props.children}
+    <main>{props.children}</main>
   </React.Fragment>
 }
 
