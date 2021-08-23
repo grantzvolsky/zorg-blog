@@ -15,7 +15,8 @@ function AppFrame(props: React.PropsWithChildren<PageLayoutProps>) {
 
 function IndexRoute(props: RouteComponentProps) {
   const index = articles.sort((a, b) => a.published < b.published ? 1 : -1).map((a) => {
-    return <li key={a.slug}><Link to={`/blog/${a.slug}`}>{a.title}</Link></li>
+    const isoDate = new Date(a.published * 1000).toISOString().substr(0, 10)
+    return <li key={a.slug}><span>{isoDate} </span><Link to={`/blog/${a.slug}`}>{a.title}</Link></li>
   })
 
   return <AppFrame>
@@ -25,8 +26,12 @@ function IndexRoute(props: RouteComponentProps) {
 
 function ArticleView(props: {data: ArticleData}) {
   const a = props.data
+  const isoDate = new Date(a.published * 1000).toISOString().substr(0, 10)
   return <React.Fragment>
-    <h1>{a.title}</h1>
+    <header>
+      <h1>{a.title}</h1>
+      <div style={{fontFamily: 'monospace'}}>{isoDate}</div>
+    </header>
     {a.text}
   </React.Fragment>
 }

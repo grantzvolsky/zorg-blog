@@ -3,6 +3,10 @@ a {
   font-family: sans-serif;
 }
 
+h1 {
+  margin-block-end: 0em;
+}
+
 :target {
   background: #ffa;
   border: 1px solid black;
@@ -15,6 +19,10 @@ a {
 .index > li {
   list-style: none;
   margin: 0.5em;
+}
+
+.index > li > span {
+  font-family: monospace;
 }
 
 .index a {
