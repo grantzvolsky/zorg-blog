@@ -1,4 +1,27 @@
+a {
+  color: #0645ad;
+  font-family: sans-serif;
+}
+
 :target {
   background: #ffa;
   border: 1px solid black;
+}
+
+.index {
+  padding: unset;
+}
+
+.index > li {
+  list-style: none;
+  margin: 0.5em;
+}
+
+.index a {
+  font-size: 1.4em;
+  text-decoration: none;
+}
+
+.index a:hover {
+  text-decoration: underline;
 }

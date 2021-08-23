@@ -19,7 +19,7 @@ function IndexRoute(props: RouteComponentProps) {
   })
 
   return <AppFrame>
-    <ul>{index}</ul>
+    <ul className="index">{index}</ul>
   </AppFrame>
 }
 
